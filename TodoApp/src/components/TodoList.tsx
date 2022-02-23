@@ -1,11 +1,8 @@
-import TodoDescription from "./Todo_Items";
+import TodoDescription from "./TodoItems";
 import "./App.css";
 import { Component } from "react";
 
-type Props = {};
-type State = {};
-
-const todo_List = [
+const todoList = [
   {
     key: 1,
     description: "Buy new sweet Shirt",
@@ -43,13 +40,11 @@ const todo_List = [
   },
 ];
 
-class Todo_List extends Component<Props, State> {
-  state = {};
-
+class TodoList extends Component {
   render() {
     return (
       <div className="flex-container">
-        {todo_List.map((item) => (
+        {todoList.map((item) => (
           <TodoDescription
             key={item.key}
             description={item.description}
@@ -60,4 +55,4 @@ class Todo_List extends Component<Props, State> {
     );
   }
 }
-export default Todo_List;
+export default TodoList;

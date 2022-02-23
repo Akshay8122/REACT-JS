@@ -1,14 +1,14 @@
-import Todo_List from "./Todo_List";
-import Todo_Date from "./Todo_Date";
+import TodoList from "./TodoList";
+import TodoDate from "./TodoDate";
 import "./App.css";
 
 const Todo = () => {
   return (
     <>
       <div className="container">
-        <Todo_Date />
+        <TodoDate />
         <div>
-          <Todo_List />
+          <TodoList />
           <div>
             <button className="Todo-btn">+</button>
           </div>
