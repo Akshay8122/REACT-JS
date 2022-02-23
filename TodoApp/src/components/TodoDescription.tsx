@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-interface TodoProps {
+interface TodoDescriptionProp {
   description: string;
   check: boolean;
 }
-const TodoDescription = (props: TodoProps) => {
+const TodoDescription = (props: TodoDescriptionProp) => {
   const [listItem, setListItem] = useState(props.check);
   const Status = () => {
     setListItem((prevlistItem) => !prevlistItem);

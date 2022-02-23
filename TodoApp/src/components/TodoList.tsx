@@ -1,4 +1,4 @@
-import TodoDescription from "./TodoItems";
+import TodoDescription from "./TodoDescription";
 import "./App.css";
 import { Component } from "react";
 
