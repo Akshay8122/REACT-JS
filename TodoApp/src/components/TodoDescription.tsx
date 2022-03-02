@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
-interface TodoDescriptionProp {
+interface TodoInf {
   description: string;
-  check: boolean;
+  id: string;
 }
-const TodoDescription = (props: TodoDescriptionProp) => {
-  const [listItem, setListItem] = useState(props.check);
-  const Status = () => {
-    setListItem((prevlistItem) => !prevlistItem);
-  };
+
+const TodoDescription = (props: TodoInf) => {
+  const [listItem, setListItem] = useState(false);
+
+  const Status = useCallback(() => {
+    setListItem(!listItem);
+  }, [props]);
+
   return (
     <div className="Description">
       <p className={listItem ? "change" : ""}>{props.description} </p>

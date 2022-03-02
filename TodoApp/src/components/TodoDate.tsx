@@ -7,6 +7,8 @@ const TodoDate = () => {
   const month: string = d.toLocaleDateString("default", { month: "short" });
   const week: string = d.toLocaleDateString("default", { weekday: "long" });
 
+  //  export const formattedDate = today.toLocaleDateString();
+
   return (
     <>
       <div>
