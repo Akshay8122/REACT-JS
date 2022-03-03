@@ -1,19 +1,19 @@
 import TodoList from "./TodoList";
 import TodoDate from "./TodoDate";
 import "./App.css";
-import { useState, useEffect, useCallback, ChangeEvent } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const Todo = (): JSX.Element => {
   const [showLabel, setShowLabel] = useState(false);
   const [btnVisible, setBtnVisible] = useState(true);
   const [data, setData] = useState("");
 
-  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+  const submitHandler = useCallback((e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     let date = new Date();
     let currdate = date.toLocaleDateString();
     localStorage.setItem("currdate", currdate);
-  };
+  }, []);
 
   const clickHandler = () => {
     setShowLabel(!showLabel);
@@ -40,7 +40,6 @@ const Todo = (): JSX.Element => {
     } else {
       window.removeEventListener("keyup", handleKeyUp);
     }
-
     return () => window.removeEventListener("keyup", handleKeyUp);
   }, [setData, handleKeyUp, submitHandler]);
 
