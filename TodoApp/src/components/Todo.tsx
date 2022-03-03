@@ -73,5 +73,4 @@ const Todo = (): JSX.Element => {
     </>
   );
 };
-
 export default Todo;

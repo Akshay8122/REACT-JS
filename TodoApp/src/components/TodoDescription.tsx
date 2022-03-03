@@ -8,7 +8,7 @@ const TodoDescription = (props: TodoInf) => {
   const Status = () => {
     setListItem(!listItem);
   };
- 
+
   return (
     <div className="Description">
       <p className={listItem ? "change" : ""}>{props.description} </p>
